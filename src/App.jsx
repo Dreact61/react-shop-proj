@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
-import './App.css'
+import './styles/App.css'
 import { storeValues } from './components/shopStore'
+import { Link } from 'react-router'
 
 function App() {
   const { products, cart, loading, error, topProducts, balance, handleBalance, fetchProducts, sortProductsByRating, addToCart, removeFromCart, clearCart, buyCartItem, extractOneCartItem } = storeValues()
@@ -20,14 +21,12 @@ function App() {
         <p>Balance: ${balance.toFixed(2)}<input type="number" placeholder='Change your balance here.' id="balance-input" onBlur={(e) => handleBalance(Number(e.target.value))} defaultValue={balance.toFixed(2)}/></p>
 
         <nav className='header-element'>
-          <p><a href="#">Sign in</a></p>
-          <p><a href="#">About us</a></p>
-          <p><a href="#">FAQ</a></p>
+          <p><a href="#">Profile</a></p>
         </nav>
       </header>
 
       <section className='rating-section'>
-        <h3>Top 5 positions:</h3>
+        <h3 style={{alignSelf:"center"}}>Top 5 positions:</h3>
         {loading ? <p className="loading-msg">Loading...</p> : ''}
           {error === null ? 
             topProducts.slice(0,5).map(product => (
@@ -70,7 +69,14 @@ function App() {
       </section>
       
       <footer>
-        <button type="button">Sign in</button>
+        <div className='footer-element'>
+          <a href="https://github.com/Dreact61/portfolio">My GitHub portfolio</a>
+        </div>
+        <Link to="/sign-in" style={{width:"auto", fontStyle:"normal"}}>
+          <button type="button" className='footer-btn'>Sign in</button>
+        </Link>
+
+        <button type="button" className="footer-btn">View cart</button>
       </footer>
     </div>
   )

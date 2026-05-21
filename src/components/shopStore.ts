@@ -128,6 +128,7 @@ export const storeValues = create<StoreType>()(
                     })
                     alert(`${product.title} was bought successfully! balance was changed to ${(balance - summary).toFixed(Number(2))}`)
                 } else {
+                    alert("You don't have enough money to afford that.")
                     return
                 }
             },
