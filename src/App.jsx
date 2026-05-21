@@ -61,11 +61,13 @@ function App() {
             <b>{item.title}</b>
             <p>Quantity: {item.quantity}</p>
             <p>Summary: ${Number(item.price) * Number(item.quantity)}</p>
-            <button type='button' className='add-to-cart-btn' style={{width:"30%"}} onClick={() => buyCartItem(item)}>Buy</button>
-            <button type="button" className='add-to-cart-btn' style={{width:"30%"}} onClick={() => extractOneCartItem(item.id)}>Remove one</button>
+            <div className='btns' style={{width:"100%", display:"flex", justifyContent:"space-evenly"}}>
+              <button type='button' className='cart-btn' style={{width:"30%"}} onClick={() => buyCartItem(item)}>Buy</button>
+              <button type="button" className='cart-btn' style={{width:"30%"}} onClick={() => extractOneCartItem(item.id)}>Remove one</button>
+            </div>
           </div>
         )) : <p>No products found in your cart.</p>}
-        <button type="button" className='add-to-cart-btn' onClick={clearCart}>Clear cart</button>
+        <button type="button" className='cart-btn' onClick={clearCart}>Clear cart</button>
       </section>
       
       <footer>

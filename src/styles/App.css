@@ -1,7 +1,7 @@
 /*---------------ВЕСЬ АДАПТИВ---------------------*/
 @media (min-width: 1025px) {
   .body {
-    grid-template-columns: auto 1fr 400px;
+    grid-template-columns: auto 1fr 500px;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 'header header header'
                          'rating-section main cart-section'
@@ -135,15 +135,21 @@ header {
   border: #d5ebff 2px ridge;
   width: 90%;
 }
-.cart-section > button {
+.cart-btn {
+  width: 30%;
+  transition: 0.4s;
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
   background-color: #d3f6ff;
   border-color: #8ee4fa;
   color: #3e3e3e;
 }
-.cart-item > button {
-  background-color: #d3f6ff;
-  border-color: #8ee4fa;
-  color: #3e3e3e;
+.cart-btn:hover {
+  background-color: #596bb8;
+  border-color: #2856b9;
+  color: #c3e8fd;
+  box-shadow: 1px 1px 5px 1px #2856b9;
 }
 /*---------------------КАТАЛОГ (КАРТОЧКИ ТОВАРОВ)--------------------*/
 main {
@@ -210,15 +216,17 @@ footer {
   width: 10rem;
   background-color: #657dce;
   border-color: #375fe2;
+  color: #141a3b;
   transition: 0.4s;
   cursor: pointer;
   height: 1.8rem;
   border-radius: 0.5rem;
+  margin-right: 0.3rem;
 }
 .footer-btn:hover {
   box-shadow: 1px 1px 5px 1px #657dce;
   background-color: #98adf1;
-  color: #314483;
+  color: #0a2da1;
 }
 /*---------------ПРОЧЕЕ------------------*/
 .loading-msg {
