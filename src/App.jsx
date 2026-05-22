@@ -1,10 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './styles/App.css'
+import "./other-pages/style.css"
 import { storeValues } from './components/shopStore'
+import { userData } from './components/userData'
 import { Link } from 'react-router'
 
 function App() {
   const { products, cart, loading, error, topProducts, balance, handleBalance, fetchProducts, sortProductsByRating, addToCart, removeFromCart, clearCart, buyCartItem, extractOneCartItem } = storeValues()
+  
+  const {username, isLoggedIn} = userData()
+
+  
 
   useEffect(() => {
     fetchProducts()
@@ -18,10 +24,12 @@ function App() {
     <div className='body'>
       <header>
         <h1>Shop</h1>
-        <p>Balance: ${balance.toFixed(2)}<input type="number" placeholder='Change your balance here.' id="balance-input" onBlur={(e) => handleBalance(Number(e.target.value))} defaultValue={balance.toFixed(2)}/></p>
+        <p>Balance: ${balance.toFixed(2)}<input className='border ml-2' type="number" placeholder='Change your balance here.' id="balance-input" onBlur={(e) => handleBalance(Number(e.target.value))} defaultValue={balance.toFixed(2)}/></p>
 
         <nav className='header-element'>
-          <p><a href="#">Profile</a></p>
+          <p>{isLoggedIn
+          ? <Link to="/profile" className='w-auto font-normal'>{username}</Link> 
+          : <Link to="/sign-in" className="w-auto font-normal">Sign in</Link>}</p>
         </nav>
       </header>
 
@@ -77,8 +85,6 @@ function App() {
         <Link to="/sign-in" style={{width:"auto", fontStyle:"normal"}}>
           <button type="button" className='footer-btn'>Sign in</button>
         </Link>
-
-        <button type="button" className="footer-btn">View cart</button>
       </footer>
     </div>
   )

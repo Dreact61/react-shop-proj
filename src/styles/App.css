@@ -35,8 +35,10 @@
 @media (max-width: 1024px) {
   p,i,b {
     font-size: 0.9em;
+    letter-spacing: 0.001px; 
   }
 
+  
   .body {
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -237,4 +239,7 @@ footer {
 }
 a {
   text-decoration: none;
+}
+.product > * {
+  color: #000;
 }

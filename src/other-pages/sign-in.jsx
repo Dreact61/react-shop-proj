@@ -19,6 +19,7 @@ function SignInForm() {
         }
     }, [location.pathname])
 
+    //отслеживания состояния пароля
     const [newName, setNewName] = useState(null)
     const [newPass, setNewPass] = useState(null)
 
@@ -50,7 +51,7 @@ function SignInForm() {
                 </div>
 
                 <div className="flex flex-row gap-4 justify-around">
-                    <button onClick={(e) => submitForm(e)} className="bg-[#2a2983] border-[#207df7] w-20 p-0.5 rounded transition-all duration-300 hover:bg-[#207df7] hover:text-[#1a1c38] hover:shadow-[#2771d3] shadow-2xs cursor-pointer" type="button">Login</button>
+                    <button onClick={(e) => submitForm(e)} className="bg-[#2a2983] border-[#207df7] w-20 p-0.5 rounded transition-all duration-300 hover:bg-[#207df7] hover:text-[#1a1c38] hover:shadow-[#2771d3] shadow-2xs cursor-pointer" type="button">Sign in</button>
                 </div>
 
             </form>
