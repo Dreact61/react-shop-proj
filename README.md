@@ -50,7 +50,7 @@ npm run dev
 
 ## Ссылка на демо
 
-- [Demo на GitHub Pages](https://dreact61.github.io/react-shop-proj/)
+- Demo временно недоступно (проект доступен только локально)
 
 ## Потенциальное развитие
 
