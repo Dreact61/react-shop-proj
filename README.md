@@ -23,7 +23,7 @@
 
 1. Клонировать репозиторий:
    ```bash
-   git clone https://github.com/dreact/react-shop-proj.git
+   git clone https://github.com/Dreact61/react-shop-proj.git
    cd react-shop-proj
    ```
 
