@@ -1,16 +1,67 @@
-# React + Vite
+# React Store — интернет‑магазин
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Мини‑магазин на React + TypeScript с корзиной, возможностью авторизации и адаптацией под размер экрана устройства.
+Данные тянутся с https://dummyjson.com/products через Axios.
+Баланс внутри проекта - ненастоящий, его можно настраивать внутри самой страницы для тестов.
 
-Currently, two official plugins are available:
+## Скриншоты
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Главная страница](public/screenshots/Главная.png)
+![Страница профиля](public/screenshots/Профиль.png)
+![Страница входа в аккаунт](public/screenshots/Меню_входа.png)
 
-## React Compiler
+## Технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + TypeScript
+- Zustand - управление состоянием корзины и UI
+- Axios - работу с API DummyJSON (`https://dummyjson.com/products`)
+- Tailwind CSS - стили и компоненты
+- React Router (v6) - навигация по страницам
+- Vite - сборка проекта
 
-## Expanding the ESLint configuration
+## Как запустить
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Клонировать репозиторий:
+```bash
+git clone https://github.com/dreact/react-shop-proj.git
+cd react-store
+```
+
+2. Установить зависимости:
+```bash
+npm install
+# или yarn install
+```
+
+3. Запустить в режиме разработки:
+```bash
+npm run dev
+```
+
+4. Открыть в браузере:
+- http://localhost:3000 (или порт, который выводит Vite/CRA)
+
+## Основные функции
+
+- Список продуктов с карточками.
+- Механика входа и выхода в аккаунт через localStorage
+- Корзина (добавление, удаление, изменение количества) через Zustand.
+- Простая навигация (главная, профиль, регистрация) через React Router.
+
+## Ссылка на демо
+
+- [Demo на GitHub Pages](https://dreact61.github.io/react-shop-proj/)
+
+## Потенциальное развитие
+
+- Оформление заказа.
+- Страница с деталями продукта.
+- Регистрация и входы аккаунтов через backend-технологии.
+
+## Как внести вклад
+
+Если хочешь улучшить проект:
+
+1. Форкните репозиторий.
+2. Создайте свою ветку: `git checkout -b feat/имя-фичи`.
+3. Сделайте коммиты и сделайте pull request.
