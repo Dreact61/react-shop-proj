@@ -9,7 +9,7 @@ import Profile from './other-pages/profile'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/react-shop-proj'>
       <Routes>
         <Route path='/' element={<App />} />
 
